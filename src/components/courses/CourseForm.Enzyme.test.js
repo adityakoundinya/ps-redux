@@ -1,6 +1,6 @@
 import React from "react";
 import CourseForm from "./CourseForm";
-import { shallow, render } from "enzyme";
+import { shallow } from "enzyme";
 
 function renderCourseForm(args) {
   const defaultProps = {
