@@ -14,7 +14,7 @@ class CoursesPage extends React.Component {
   };
 
   componentDidMount() {
-    const { courses, authors, actions, loading } = this.props;
+    const { courses, authors, actions } = this.props;
 
     if (courses.length === 0) {
       actions.loadCourses().catch(error => {
@@ -28,7 +28,6 @@ class CoursesPage extends React.Component {
     }
   }
   render() {
-    console.log(this.props.loading);
     return (
       <>
         {this.state.redirectToAddCoursePage && <Redirect to="/course" />}
@@ -72,7 +71,7 @@ function mapStateToProps(state) {
             };
           }),
     authors: state.authors,
-    loading: state.apiCallsInProgress
+    loading: state.apiCallsInProgress > 0
   };
 }
 
